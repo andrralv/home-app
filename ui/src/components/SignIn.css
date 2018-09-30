@@ -107,3 +107,17 @@
 .form-phone-input {
     width: 40% !important; 
 }
+
+@media screen and (max-width: 720px) {
+    .form-step-input {
+        border-style: none none solid none;
+        border-color: lightgrey;
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+
+    .react-phone-number-input__input {
+        font-size: 0.8em !important;
+        font-weight: bold;
+    }
+  }
