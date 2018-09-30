@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Line } from 'rc-progress';
+import logo from '../home-logo.png'
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
+import Review from './Review';
 
 class SignIn extends React.Component {
     constructor(props) {
@@ -43,7 +45,7 @@ renderForm(param, bind) {
         case 75:
             return <Step4 changeFormData={bind} goBack={this.goBack}/>;
         case 100:
-            return "You are all done!";
+            return <Review changeFormData={bind} goBack={this.goBack} data={this.state}/>;
         default:
             return "You've Already Registered!";
         }
@@ -51,9 +53,18 @@ renderForm(param, bind) {
 
 render() {
     return (
-        <form>
-            {this.renderForm(this.state.progress, this.changeFormData)}
-        </form>
+        <React.Fragment>
+            <form>
+                <Line percent={this.state.progress} 
+                    strokeWidth="1" 
+                    strokeColor="#3b7fed" 
+                    className={'progress-bar'}
+                    strokeLinecap={'square'}/>
+                    <img src={logo} className={'home-logo'} alt={'home logo'}
+                />
+                {this.renderForm(this.state.progress, this.changeFormData)}
+            </form>
+        </React.Fragment>
         )
     }
 

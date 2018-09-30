@@ -37,13 +37,13 @@
     transition:         color 0.5s;
 }
 
-.form-back-button, .form-next-button {
+.form-back-button, .form-next-button, .form-submit-button {
     text-decoration: underline;
 }
 
 .form-submit-button:hover, .form-back-button:hover {
     cursor: pointer;
-    color: #2d3ebf;
+    color: #3b7fed;
     -webkit-transition: color 0.5s;
     -moz-transition:    color 0.5s;
     -ms-transition:     color 0.5s;
@@ -59,7 +59,7 @@
 }
 
 .form-radio-buttons > * {
-    padding: 5px;
+    padding: 3px;
     text-align: left;
 }
 
@@ -72,6 +72,7 @@
     -webkit-box-shadow: 9px 9px 5px -6px rgba(0,0,0,0.06);
     -moz-box-shadow: 9px 9px 5px -6px rgba(0,0,0,0.06);
     box-shadow: 9px 9px 5px -6px rgba(0,0,0,0.06);
+    min-height: 310px;
 }
 
 .form-radio-buttons {
@@ -81,3 +82,19 @@
     border-radius: 10px;
     padding: 10px
 }
+
+.progress-bar {
+    border-radius: 0px;
+    margin-bottom: 10px;
+}
+
+.home-logo {
+    width: 80px;
+    height: auto;
+}
+
+.review-label {
+    color: grey;
+}
+
+.review-data > * {text-align: left; padding-left: 20%;}

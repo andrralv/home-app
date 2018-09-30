@@ -1,12 +1,14 @@
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif !important;
 }
+
+html {font-family: 'Times New Roman', sans-serif !important;}
 
 .App-header {
   background-color: #222;
   height: 20px;
   padding: 20px;
-  margin-bottom: 70px;
   color: white;
 }
 
@@ -15,7 +17,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 20px;
     width: 100%;
     overflow: hidden;
 }
@@ -31,4 +33,9 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.error-message {
+  font-weight: bold;
+  color: red;
 }

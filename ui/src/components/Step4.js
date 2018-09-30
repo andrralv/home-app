@@ -4,12 +4,15 @@ import  './SignIn.css';
 class Step4 extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {email: ''}
-        this.validate = this.validate.bind(this);
+        this.state = {salary: '',
+            errorMessage: 'You must pick at least one value', 
+            error: false}
+        this.bindState = this.bindState.bind(this);
         this.nextStep = this.nextStep.bind(this);
     }
 
-validate(event, type) {
+bindState(event, type) {
+    console.log(event.target.value, type)
     if (true) {
         this.setState({[type]: event.target.value})
     }
@@ -24,35 +27,36 @@ render() {
     return (
         <div className={'step-container'}>
             <h1>Please Enter Your Salary Range</h1>
-            <div className={'form-radio-buttons'}>
+            <div className={'form-radio-buttons'} onChange={(e) => this.validate(e, 'salary')}>
                 <div>
                     <input type="radio" id="contactChoice1"
-                    name="contact" value="email"/>
-                    <label for="contactChoice1">0 - 1.000</label>
+                        name="contact" value="0 - 1.000"/>
+                    <label htmlFor="contactChoice1">0 - 1.000</label>
                 </div>
                 <div>
                     <input type="radio" id="contactChoice2"
-                    name="contact" value="phone"/>
-                    <label for="contactChoice2">1.000 - 2.000</label>
+                        name="contact" value="1.000 - 2.000"/>
+                    <label htmlFor="contactChoice2">1.000 - 2.000</label>
                 </div>
                 <div>
                     <input type="radio" id="contactChoice3"
-                    name="contact" value="mail"/>
-                    <label for="contactChoice3">2.000 - 3.000</label>
+                        name="contact" value="2.000 - 3.000"/>
+                    <label htmlFor="contactChoice3">2.000 - 3.000</label>
                 </div>
                 <div>
                     <input type="radio" id="contactChoice2"
-                    name="contact" value="phone"/>
-                    <label for="contactChoice2">3.000 - 4.000</label>
+                        name="contact" value="3.000 - 4.000"/>
+                    <label htmlFor="contactChoice2">3.000 - 4.000</label>
                 </div>
-            <div>
-            <input type="radio" id="contactChoice3"
-            name="contact" value="mail"/>
-            <label for="contactChoice3">Mehr als 4.000</label>
+                <div>
+                    <input type="radio" id="contactChoice3"
+                        name="contact" value="Mehr als 4.000"/>
+                    <label htmlFor="contactChoice3">Mehr als 4.000</label>
+                </div>
             </div>
-        </div>
-            <span><h2 onClick={this.nextStep} className={'form-submit-button'}>Go Back</h2></span>
+            <span><h2 onClick={this.props.goBack} className={'form-submit-button'}>Go Back</h2></span>
             <span><h2 onClick={this.nextStep} className={'form-submit-button'}>Submit</h2></span>
+            {this.state.error ? <div className={'error-message'}>{this.state.errorMessage}</div> : ''}
         </div>
         );
     }
