@@ -1,50 +1,62 @@
-// import * as React from 'react';
-// import SignIn from './step1';
-// import Formsy from 'formsy-react';
+import * as React from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { Line } from 'rc-progress';
+import Step1 from './Step1';
+import Step2 from './Step2';
+import Step3 from './Step3';
+import Step4 from './Step4';
 
-// class SignIn extends React.Component {
-//     constructor(props) {
-//         super(props);
-//                 this.state = {
-//                 progress: 0,
-//             }
-//     }
+class SignIn extends React.Component {
+    constructor(props) {
+        super(props);
+                this.state = {
+                progress: 0,
+            }
+        this.changeFormData = this.changeFormData.bind(this);
+        this.goBack = this.goBack.bind(this);
+        this.submit = this.submit.bind(this);
+        
+    }
 
-//     form = () => {
-//         switch(this.state.progress) {
-//             case 0:
-//                 return(<Step1 />);
-//             case 25:
-//                 return(<span>In Progress...</span>);
-//             default:
-//                 return(<span>You've already registered!</span>);
-//             }
-//     }
+changeFormData(form) {
+    this.setState({...form, progress: this.state.progress + 25})
+}
 
-// componentWillMount() {
-// }
+goBack() {
+    this.setState({ progress: this.state.progress - 25 })
+    console.log(this.state)
+}
 
-// render() {
-//     return (
-//         <Formsy 
-//             onValidSubmit={this.submit} 
-//             onValid={this.enableButton} 
-//             onInvalid={this.disableButton}>
-//             {this.form}
-//             <button type="submit" disabled={!this.state.canSubmit}>Submit</button>
-//         </Formsy>
-//         )
-//     }
-// }
+submit(e) {
+    e.preventDefault();
+}
 
-// export default SignIn;
+renderForm(param, bind) {
+    console.log(this.state)
+    switch(param) {
+        case 0:
+            return <Step1 changeFormData={bind} goBack={this.goBack}/>;
+        case 25:
+            return <Step2 changeFormData={bind} goBack={this.goBack}/>;
+        case 50:
+            return <Step3 changeFormData={bind} goBack={this.goBack}/>;
+        case 75:
+            return <Step4 changeFormData={bind} goBack={this.goBack}/>;
+        case 100:
+            return "You are all done!";
+        default:
+            return "You've Already Registered!";
+        }
+  }
 
-// // {switch(this.state.progress) {
-// //     case 0:
-// //         return(<Step1 />);
-// //     case 25:
-// //         return(<span>In Progress...</span>);
-// //     default:
-// //         return(<span>You've already registered!</span>);
-// //     }
-// // }
+render() {
+    return (
+        <form>
+            {this.renderForm(this.state.progress, this.changeFormData)}
+        </form>
+        )
+    }
+
+}
+
+export default SignIn;

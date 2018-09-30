@@ -1,11 +1,10 @@
 import React from 'react';
 import  './SignIn.css';
 
-class Step1 extends React.Component {
+class Step2 extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {firstName: '', 
-        lastName: ''}
+        this.state = {email: ''}
         this.validate = this.validate.bind(this);
         this.nextStep = this.nextStep.bind(this);
     }
@@ -18,22 +17,18 @@ validate(event, type) {
 
 nextStep(event) {
     event.preventDefault();
-    this.props.changeFormData(this.state, {progress: 25});
+    this.props.changeFormData(this.state);
 }
 
 render() {
     return (
         <div className={'step-container'}>
-            <h1>Please Enter Your Name</h1>
+            <h1>Please Enter Your Email Address</h1>
+            <span><h4 onClick={this.props.goBack} className={'form-back-button'}>Go Back</h4></span>
             <input
-                className={'form-step-input step-1'}
-                onChange={(e) => this.validate(e, 'firstName')}
+                className={'form-step-input'}
+                onChange={(e) => this.validate(e, 'email')}
                 value={this.state.firstName}
-            />
-            <input
-                className={'form-step-input step-1'}
-                onChange={(e) => this.validate(e, 'lastName')}
-                value={this.state.lastName}
             />
             <span><h2 onClick={this.nextStep} className={'form-next-button'}>Next</h2></span>
         </div>
@@ -41,4 +36,4 @@ render() {
     }
 }
 
-export default Step1;
+export default Step2;

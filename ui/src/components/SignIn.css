@@ -1,0 +1,83 @@
+.step-container > input, .step-container > span, .step-container > h4 {
+    display: inline-block;
+    margin: 0 30px 0 0;
+}
+
+.step-1 {
+    width: 20%;
+}
+.step-container h1 {
+    margin-bottom: 4%;
+}
+
+.form-step-input {
+    border-style: none none solid none;
+    border-color: lightgrey;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.form-step-input:focus {
+    outline: none;
+    border-color: black;
+    -webkit-transition: border-color 1s;
+    -moz-transition:    border-color 1s;
+    -ms-transition:     border-color 1s;
+    -o-transition:      border-color 1s;
+    transition:         border-color 1s;
+}
+
+.form-next-button:hover {
+    cursor: pointer;
+    color: lime;
+    -webkit-transition: color 0.5s;
+    -moz-transition:    color 0.5s;
+    -ms-transition:     color 0.5s;
+    -o-transition:      color 0.5s;
+    transition:         color 0.5s;
+}
+
+.form-back-button, .form-next-button {
+    text-decoration: underline;
+}
+
+.form-submit-button:hover, .form-back-button:hover {
+    cursor: pointer;
+    color: #2d3ebf;
+    -webkit-transition: color 0.5s;
+    -moz-transition:    color 0.5s;
+    -ms-transition:     color 0.5s;
+    -o-transition:      color 0.5s;
+    transition:         color 0.5s;
+}
+
+.form-next-back-buttons > * {
+    display: inline-block;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.form-radio-buttons > * {
+    padding: 5px;
+    text-align: left;
+}
+
+.step-container {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-box-shadow: 9px 9px 5px -6px rgba(0,0,0,0.06);
+    -moz-box-shadow: 9px 9px 5px -6px rgba(0,0,0,0.06);
+    box-shadow: 9px 9px 5px -6px rgba(0,0,0,0.06);
+}
+
+.form-radio-buttons {
+    margin: auto;
+    width: 50%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 10px
+}
