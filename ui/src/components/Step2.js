@@ -20,7 +20,6 @@ bindState(event, type) {
 
 nextStep(event) {
     event.preventDefault();
-    this.props.changeFormData(this.state);
     if (regex.email.test(this.state.email)) {
         this.props.changeFormData(this.state, {progress: 25});
     } else {
@@ -36,7 +35,7 @@ render() {
             <input
                 className={'form-step-input'}
                 onChange={(e) => this.bindState(e, 'email')}
-                value={this.state.firstName}
+                value={this.state.email}
             />
             <span><h2 onClick={this.nextStep} className={'form-next-button'}>Next</h2></span>
             {this.state.error ? <div className={'error-message'}>{this.state.errorMessage}</div> : ''}

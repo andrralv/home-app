@@ -98,3 +98,12 @@
 }
 
 .review-data > * {text-align: left; padding-left: 20%;}
+
+.react-phone-number-input__input {
+    font-size: 1.8em !important;
+    font-weight: bold;
+}
+
+.form-phone-input {
+    width: 40% !important; 
+}

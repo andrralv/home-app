@@ -27,7 +27,7 @@ render() {
     return (
         <div className={'step-container'}>
             <h1>Please Enter Your Salary Range</h1>
-            <div className={'form-radio-buttons'} onChange={(e) => this.validate(e, 'salary')}>
+            <div className={'form-radio-buttons'} onChange={(e) => this.bindState(e, 'salary')}>
                 <div>
                     <input type="radio" id="contactChoice1"
                         name="contact" value="0 - 1.000"/>
