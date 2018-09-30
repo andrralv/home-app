@@ -12,7 +12,6 @@ class Step4 extends React.Component {
     }
 
 bindState(event, type) {
-    console.log(event.target.value, type)
     if (true) {
         this.setState({[type]: event.target.value})
     }

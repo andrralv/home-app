@@ -26,7 +26,6 @@ changeFormData(form) {
 
 goBack() {
     this.setState({ progress: this.state.progress - 25 })
-    console.log(this.state)
 }
 
 submit(e) {
@@ -34,7 +33,6 @@ submit(e) {
 }
 
 renderForm(param, bind) {
-    console.log(this.state)
     switch(param) {
         case 0:
             return <Step1 changeFormData={bind} goBack={this.goBack}/>;
